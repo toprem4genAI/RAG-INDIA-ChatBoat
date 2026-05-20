@@ -5,7 +5,7 @@ from openai import RateLimitError
 from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
 from langchain_core.prompts import PromptTemplate
-
+from pathlib import Path
 
 # -----------------------------
 # OpenAI API Key
@@ -31,9 +31,12 @@ st.write("Ask questions from PDF documents stored inside a local directory.")
 # -----------------------------
 st.sidebar.header("Configuration")
 
+
+BASE_DIR = Path(__file__).resolve().parent
+
 pdf_path = st.sidebar.text_input(
     "Enter PDF Directory Path",
-    value="./Udemy-Docs"
+    value=str(BASE_DIR)
 )
 
 load_button = st.sidebar.button("Load PDF Documents")
