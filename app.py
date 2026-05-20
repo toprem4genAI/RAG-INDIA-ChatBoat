@@ -33,7 +33,7 @@ st.sidebar.header("Configuration")
 
 pdf_path = st.sidebar.text_input(
     "Enter PDF Directory Path",
-    value=r"C:\Users\PC\Desktop\GEN-AI-Docs\Udemy-Docs"
+    value="./Udemy-Docs"
 )
 
 load_button = st.sidebar.button("Load PDF Documents")
