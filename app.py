@@ -10,7 +10,11 @@ from pathlib import Path
 # -----------------------------
 # OpenAI API Key
 # -----------------------------
-os.environ["OPENAI_API_KEY"] = "YOUR_KEY"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+if not OPENAI_API_KEY:
+    st.error("OPENAI_API_KEY is not set. Please configure it on AWS EC2.")
+    st.stop()
 
 
 # -----------------------------
